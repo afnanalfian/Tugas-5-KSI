@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cipher Encryption/Decryption</title>
+    <link rel="stylesheet" href="222112201_Muhammad Afnan Alfian_Tugas 5 KSI.css">
+    <script src="transposition_cipher.js" defer></script>
+    <script src="substitution_cipher.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Cipher Encryption/Decryption</h1>
+
+        <div class="cipher-section">
+            <h2>Transposition Cipher</h2>
+            <label for="transpositionPlainText">Plain Text:</label>
+            <input type="text" id="transpositionPlainText">
+            <br>
+            <label for="transpositionKey">Key:</label>
+            <input type="number" id="transpositionKey" min="1">
+            <br>
+            <button onclick="transpositionEncrypt()">Encrypt</button>
+            <button onclick="transpositionDecrypt()">Decrypt</button>
+            <br>
+            <label for="transpositionCipherText">Cipher Text:</label>
+            <textarea id="transpositionCipherText" readonly></textarea>
+        </div>
+
+        <hr>
+
+        <div class="cipher-section">
+            <h2>Substitution Cipher</h2>
+            <label for="substitutionPlainText">Plain Text:</label>
+            <input type="text" id="substitutionPlainText">
+            <br>
+            <label for="substitutionKey">Key:</label>
+            <input type="number" id="substitutionKey" min="1">
+            <br>
+            <button onclick="substitutionEncrypt()">Encrypt</button>
+            <button onclick="substitutionDecrypt()">Decrypt</button>
+            <br>
+            <label for="substitutionCipherText">Cipher Text:</label>
+            <textarea id="substitutionCipherText" readonly></textarea>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Muhammad Afnan Alfian - 222112201 - 3SI2.</p>
+    </div>
+
+    <script>
+        function transpositionEncrypt() {
+            const plainText = document.getElementById('transpositionPlainText').value;
+            const key = parseInt(document.getElementById('transpositionKey').value);
+            const cipherText = transpose_encrypt(plainText, key);
+            document.getElementById('transpositionCipherText').value = cipherText;
+        }
+
+        function transpositionDecrypt() {
+            const cipherText = document.getElementById('transpositionCipherText').value;
+            const key = parseInt(document.getElementById('transpositionKey').value);
+            const plainText = transpose_decrypt(cipherText, key);
+            document.getElementById('transpositionPlainText').value = plainText;
+        }
+
+        function substitutionEncrypt() {
+            const plainText = document.getElementById('substitutionPlainText').value;
+            const key = parseInt(document.getElementById('substitutionKey').value);
+            const cipherText = substitution_encrypt(plainText, key);
+            document.getElementById('substitutionCipherText').value = cipherText;
+        }
+
+        function substitutionDecrypt() {
+            const cipherText = document.getElementById('substitutionCipherText').value;
+            const key = parseInt(document.getElementById('substitutionKey').value);
+            const plainText = substitution_decrypt(cipherText, key);
+            document.getElementById('substitutionPlainText').value = plainText;
+        }
+    </script>
+</body>
+</html>

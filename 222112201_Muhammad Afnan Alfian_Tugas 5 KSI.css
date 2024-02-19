@@ -1,0 +1,64 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa; /* Warna dasar hijau muda */
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff; /* Warna latar belakang */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #00796b; /* Warna hijau gelap */
+}
+
+.cipher-section {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #004d40; /* Warna hijau lebih gelap */
+}
+
+input, textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #004d40; /* Warna hijau lebih gelap */
+    color: #fff; /* Warna teks putih */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00796b; /* Warna hijau gelap saat hover */
+}
+
+textarea {
+    height: 80px;
+    resize: none;
+}
+.footer {
+    background-color: #004d40; /* Warna hijau lebih gelap */
+    color: #fff; /* Warna teks putih */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
